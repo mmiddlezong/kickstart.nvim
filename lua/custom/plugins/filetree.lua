@@ -8,6 +8,6 @@ return {
   },
   config = function()
     require('neo-tree').setup {}
-    vim.keymap.set('n', '<leader>E', '<Cmd>Neotree toggle current reveal_force_cwd<CR>', { desc = 'Toggle file [E]xplorer' })
+    vim.keymap.set('n', '<leader>E', '<Cmd>Neotree toggle reveal_force_cwd<CR>', { desc = 'Toggle file [E]xplorer' })
   end,
 }
