@@ -657,7 +657,7 @@ require('lazy').setup({
         end)(),
         dependencies = {
           {
-            'evesdropper/luasnip-latex-snippets.nvim',
+            'mmiddlezong/luasnip-latex-snippets.nvim',
             -- config = function()
             --   require('luasnip-latex-snippets').setup()
             -- end,
