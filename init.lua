@@ -81,7 +81,7 @@ vim.opt.linebreak = true
 --  See `:help vim.keymap.set()`
 
 -- Enter normal mode with jk
-vim.keymap.set('i', 'jk', '<ESC>')
+-- vim.keymap.set('i', 'jk', '<ESC>')
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -602,6 +602,7 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'micangl/cmp-vimtex',
     },
     config = function()
       -- See `:help cmp`
@@ -658,14 +659,6 @@ require('lazy').setup({
           ['<Tab>'] = cmp.mapping(function(fallback)
             if luasnip.locally_jumpable(1) then
               luasnip.jump(1)
-            elseif cmp.visible() then
-              if luasnip.expandable() then
-                luasnip.expand()
-              else
-                cmp.confirm {
-                  select = true,
-                }
-              end
             else
               fallback()
             end
@@ -703,6 +696,14 @@ require('lazy').setup({
           { name = 'path' },
         },
       }
+      cmp.setup.filetype('tex', {
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = 'vimtex' },
+          { name = 'path' },
+        },
+      })
     end,
   },
 
