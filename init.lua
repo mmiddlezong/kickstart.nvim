@@ -477,6 +477,8 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
+        texlab = {},
+        ltex = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -578,12 +580,7 @@ require('lazy').setup({
           return 'make install_jsregexp'
         end)(),
         dependencies = {
-          {
-            'mmiddlezong/luasnip-latex-snippets.nvim',
-            -- config = function()
-            --   require('luasnip-latex-snippets').setup()
-            -- end,
-          },
+          'mmiddlezong/luasnip-latex-snippets.nvim',
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
@@ -602,7 +599,6 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
-      'micangl/cmp-vimtex',
     },
     config = function()
       -- See `:help cmp`
@@ -696,14 +692,6 @@ require('lazy').setup({
           { name = 'path' },
         },
       }
-      cmp.setup.filetype('tex', {
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'vimtex' },
-          { name = 'path' },
-        },
-      })
     end,
   },
 
