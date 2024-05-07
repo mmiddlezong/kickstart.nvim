@@ -22,22 +22,23 @@ return {
     'lervag/vimtex',
     init = function()
       vim.g.vimtex_view_method = 'skim'
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = 'tex',
-        callback = function()
-          -- vim.opt_local.conceallevel = 2
-        end,
-      })
-      vim.g.matchup_override_vimtex = true
-      vim.g.matchup_matchparen_deferred = true
+      -- vim.api.nvim_create_autocmd('FileType', {
+      --   pattern = 'tex',
+      --   callback = function()
+      --     vim.opt_local.conceallevel = 2
+      --   end,
+      -- })
+      vim.g.vimtex_matchparen_enabled = false
+      -- vim.g.matchup_override_vimtex = true
+      -- vim.g.matchup_matchparen_deferred = true
       -- Set the Conceal highlight color
       -- vim.api.nvim_set_hl(0, 'Conceal', { fg = '#b5d3e6' })
     end,
   },
-  {
-    'andymass/vim-matchup',
-    config = function()
-      vim.g.matchup_matchparen_offscreen = { method = 'popup' }
-    end,
-  },
+  -- {
+  --   'andymass/vim-matchup',
+  --   config = function()
+  --     vim.g.matchup_matchparen_offscreen = { method = 'popup' }
+  --   end,
+  -- },
 }
