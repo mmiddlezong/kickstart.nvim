@@ -655,6 +655,14 @@ require('lazy').setup({
           ['<Tab>'] = cmp.mapping(function(fallback)
             if luasnip.locally_jumpable(1) then
               luasnip.jump(1)
+            elseif cmp.visible() then
+              if luasnip.expandable() then
+                luasnip.expand()
+              else
+                cmp.confirm {
+                  select = true,
+                }
+              end
             else
               fallback()
             end
@@ -695,6 +703,7 @@ require('lazy').setup({
       cmp.setup.filetype('tex', {
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'luasnip' },
           { name = 'vimtex' },
         },
       })
