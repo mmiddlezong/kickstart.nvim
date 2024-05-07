@@ -338,7 +338,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- { 'j-hui/fidget.nvim', opts = {} },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
@@ -477,7 +477,7 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
-        texlab = {},
+        -- texlab = {},
         ltex = {},
         lua_ls = {
           -- cmd = {...},
@@ -593,7 +593,7 @@ require('lazy').setup({
         },
       },
       'saadparwaiz1/cmp_luasnip',
-
+      'micangl/cmp-vimtex',
       -- Adds other completion capabilities.
       --  nvim-cmp does not ship with all sources by default. They are split
       --  into multiple repos for maintenance purposes.
@@ -689,9 +689,15 @@ require('lazy').setup({
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
-          { name = 'path' },
+          -- { name = 'path' },
         },
       }
+      cmp.setup.filetype('tex', {
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'vimtex' },
+        },
+      })
     end,
   },
 
