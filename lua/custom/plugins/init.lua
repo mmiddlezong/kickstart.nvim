@@ -5,7 +5,6 @@
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
-
     version = '*',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -29,6 +28,8 @@ return {
       --   end,
       -- })
       vim.g.vimtex_matchparen_enabled = false
+      vim.g.vimtex_imaps_enabled = false
+      vim.g.vimtex_indent_enabled = false
       -- vim.g.matchup_override_vimtex = true
       -- vim.g.matchup_matchparen_deferred = true
       -- Set the Conceal highlight color
