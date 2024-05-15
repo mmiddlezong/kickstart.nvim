@@ -479,7 +479,7 @@ require('lazy').setup({
         --
 
         -- texlab = {},
-        ltex = {},
+        -- ltex = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
