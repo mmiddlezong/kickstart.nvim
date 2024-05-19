@@ -77,6 +77,10 @@ vim.opt.scrolloff = 10
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
+-- Make matchparen faster
+vim.g.matchparen_timeout = 5
+vim.g.matchparen_insert_timeout = 2
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
